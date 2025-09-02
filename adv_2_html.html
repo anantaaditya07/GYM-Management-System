@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GYM Management System</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <h1>GYM Management</h1>
+      <ul>
+        <li><a href="#admin">Admin</a></li>
+        <li><a href="#member">Members</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Digital Gym Management System</h2>
+    <p>Store receipts, manage members, and send notifications easily.</p>
+  </section>
+
+  <!-- Admin Section -->
+  <section id="admin" class="card">
+    <h3>Admin Panel</h3>
+    <button onclick="openForm('addMember')">Add Member</button>
+    <button onclick="openForm('createBill')">Create Bill</button>
+    <button onclick="openForm('assignPackage')">Assign Package</button>
+  </section>
+
+  <!-- Member Section -->
+  <section id="member" class="card">
+    <h3>Member Panel</h3>
+    <button onclick="openForm('viewReceipts')">View Receipts</button>
+    <button onclick="openForm('viewNotifications')">View Notifications</button>
+  </section>
+
+  <!-- Forms -->
+  <section id="login" class="form-container hidden">
+    <h3>Login</h3>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <section id="addMember" class="form-container hidden">
+    <h3>Add Member</h3>
+    <form id="addMemberForm">
+      <input type="text" id="memberName" placeholder="Member Name" required>
+      <input type="email" id="memberEmail" placeholder="Member Email" required>
+      <input type="number" id="memberAge" placeholder="Age" required>
+      <button type="submit">Add</button>
+    </form>
+  </section>
+
+  <section id="createBill" class="form-container hidden">
+    <h3>Create Bill</h3>
+    <form id="createBillForm">
+      <input type="email" id="billEmail" placeholder="Member Email" required>
+      <input type="number" id="billAmount" placeholder="Amount" required>
+      <button type="submit">Generate Bill</button>
+    </form>
+  </section>
+
+  <section id="assignPackage" class="form-container hidden">
+    <h3>Assign Package</h3>
+    <form id="assignPackageForm">
+      <input type="email" id="packageEmail" placeholder="Member Email" required>
+      <select id="packageType">
+        <option value="Monthly">Monthly</option>
+        <option value="Quarterly">Quarterly</option>
+        <option value="Yearly">Yearly</option>
+      </select>
+      <button type="submit">Assign</button>
+    </form>
+  </section>
+
+  <section id="viewReceipts" class="form-container hidden">
+    <h3>Receipts</h3>
+    <ul id="receiptsList"></ul>
+  </section>
+
+  <section id="viewNotifications" class="form-container hidden">
+    <h3>Notifications</h3>
+    <ul id="notificationsList"></ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Gym Management Project</p>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+  <script src="script2.js"></script>
+</body>
+</html>
